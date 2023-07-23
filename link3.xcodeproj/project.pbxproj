@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		659220852A6C759E00D8AEEC /* link3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220842A6C759E00D8AEEC /* link3App.swift */; };
-		659220872A6C759E00D8AEEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220862A6C759E00D8AEEC /* ContentView.swift */; };
 		659220892A6C75A200D8AEEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659220882A6C75A200D8AEEC /* Assets.xcassets */; };
 		6592208D2A6C75A200D8AEEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6592208C2A6C75A200D8AEEC /* Preview Assets.xcassets */; };
 		659220972A6C75A200D8AEEC /* link3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220962A6C75A200D8AEEC /* link3Tests.swift */; };
 		659220A12A6C75A200D8AEEC /* link3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220A02A6C75A200D8AEEC /* link3UITests.swift */; };
 		659220A32A6C75A200D8AEEC /* link3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220A22A6C75A200D8AEEC /* link3UITestsLaunchTests.swift */; };
+		65D6BECD2A6C85810027EAB4 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BECC2A6C85810027EAB4 /* DataView.swift */; };
+		65D6BED02A6C971D0027EAB4 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BECF2A6C971D0027EAB4 /* RecordItem.swift */; };
+		65D6BED22A6CA0280027EAB4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BED12A6CA0280027EAB4 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		659220812A6C759E00D8AEEC /* link3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = link3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659220842A6C759E00D8AEEC /* link3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = link3App.swift; sourceTree = "<group>"; };
-		659220862A6C759E00D8AEEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		659220882A6C75A200D8AEEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6592208A2A6C75A200D8AEEC /* link3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = link3.entitlements; sourceTree = "<group>"; };
 		6592208C2A6C75A200D8AEEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		6592209C2A6C75A200D8AEEC /* link3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = link3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659220A02A6C75A200D8AEEC /* link3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = link3UITests.swift; sourceTree = "<group>"; };
 		659220A22A6C75A200D8AEEC /* link3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = link3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65D6BECC2A6C85810027EAB4 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		65D6BECF2A6C971D0027EAB4 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
+		65D6BED12A6CA0280027EAB4 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = ../../../../../.Trash/OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				659220842A6C759E00D8AEEC /* link3App.swift */,
-				659220862A6C759E00D8AEEC /* ContentView.swift */,
+				65D6BECE2A6C96E30027EAB4 /* Components */,
+				659220AF2A6C75C600D8AEEC /* views */,
 				659220882A6C75A200D8AEEC /* Assets.xcassets */,
 				6592208A2A6C75A200D8AEEC /* link3.entitlements */,
 				6592208B2A6C75A200D8AEEC /* Preview Content */,
@@ -127,6 +132,23 @@
 				659220A22A6C75A200D8AEEC /* link3UITestsLaunchTests.swift */,
 			);
 			path = link3UITests;
+			sourceTree = "<group>";
+		};
+		659220AF2A6C75C600D8AEEC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				65D6BED12A6CA0280027EAB4 /* OnboardingView.swift */,
+				65D6BECC2A6C85810027EAB4 /* DataView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		65D6BECE2A6C96E30027EAB4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				65D6BECF2A6C971D0027EAB4 /* RecordItem.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659220872A6C759E00D8AEEC /* ContentView.swift in Sources */,
+				65D6BED02A6C971D0027EAB4 /* RecordItem.swift in Sources */,
+				65D6BECD2A6C85810027EAB4 /* DataView.swift in Sources */,
+				65D6BED22A6CA0280027EAB4 /* OnboardingView.swift in Sources */,
 				659220852A6C759E00D8AEEC /* link3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"link3/Preview Content\"";
+				DEVELOPMENT_TEAM = ZDBK8Q86L2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -456,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"link3/Preview Content\"";
+				DEVELOPMENT_TEAM = ZDBK8Q86L2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
