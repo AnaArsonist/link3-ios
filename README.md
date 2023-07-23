@@ -1,4 +1,5 @@
 # 🍎 link🌴-ios
+![link3](https://github.com/AnaArsonist/link3-ios/assets/113212503/c7b27cfc-9975-4864-bab4-3a7147cf247c)
 
 Link3 IOS is a lightweight iOS app that utilises [enstate.rs](https://github.com/v3xlabs/enstate) for blazingly fast ENS record display.
 
