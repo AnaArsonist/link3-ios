@@ -15,7 +15,7 @@
 		659220A32A6C75A200D8AEEC /* link3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220A22A6C75A200D8AEEC /* link3UITestsLaunchTests.swift */; };
 		65D6BECD2A6C85810027EAB4 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BECC2A6C85810027EAB4 /* DataView.swift */; };
 		65D6BED02A6C971D0027EAB4 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BECF2A6C971D0027EAB4 /* RecordItem.swift */; };
-		65D6BED22A6CA0280027EAB4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BED12A6CA0280027EAB4 /* OnboardingView.swift */; };
+		65D6BED42A6CBF010027EAB4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6BED32A6CBF010027EAB4 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		659220A22A6C75A200D8AEEC /* link3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = link3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65D6BECC2A6C85810027EAB4 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		65D6BECF2A6C971D0027EAB4 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
-		65D6BED12A6CA0280027EAB4 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = ../../../../../.Trash/OnboardingView.swift; sourceTree = "<group>"; };
+		65D6BED32A6CBF010027EAB4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 		659220AF2A6C75C600D8AEEC /* views */ = {
 			isa = PBXGroup;
 			children = (
-				65D6BED12A6CA0280027EAB4 /* OnboardingView.swift */,
 				65D6BECC2A6C85810027EAB4 /* DataView.swift */,
+				65D6BED32A6CBF010027EAB4 /* OnboardingView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -282,8 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D6BED02A6C971D0027EAB4 /* RecordItem.swift in Sources */,
+				65D6BED42A6CBF010027EAB4 /* OnboardingView.swift in Sources */,
 				65D6BECD2A6C85810027EAB4 /* DataView.swift in Sources */,
-				65D6BED22A6CA0280027EAB4 /* OnboardingView.swift in Sources */,
 				659220852A6C759E00D8AEEC /* link3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
