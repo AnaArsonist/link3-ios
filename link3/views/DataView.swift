@@ -24,7 +24,7 @@ func truncateAddress(address: String) -> String {
     let index1 = address.index(address.startIndex, offsetBy: 5)
     let index2 = address.index(address.endIndex, offsetBy: -5)
     
-    return address.prefix(upTo: index1) + "-" + address.suffix(from: index2)
+    return address.prefix(upTo: index1) + "..." + address.suffix(from: index2)
 }
 
 struct DataView: View {
@@ -36,32 +36,32 @@ struct DataView: View {
     func lookupEns() -> Void {
         let lookupName = searchData.ensName.lowercased()
             
-            let url = URL(string: "https://enstate.rs/n/" + lookupName)!
+        let url = URL(string: "https://enstate.rs/n/" + lookupName)!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                loadState = LoadState.Error
+                return
+            }
+            let res = String(data: data, encoding: .utf8)
             
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                guard let data = data else {
-                    loadState = LoadState.Error
-                    return
-                }
-                let res = String(data: data, encoding: .utf8)
-                
-                let textRes = res?.data(using: .utf8)!
-                result = try? JSONDecoder().decode(EnstateResult.self, from: textRes!)
-                
-                if result == nil {
-                    loadState = LoadState.Error
-                    return
-                }
-                
-                loadState = LoadState.Success
+            let textRes = res?.data(using: .utf8)!
+            result = try? JSONDecoder().decode(EnstateResult.self, from: textRes!)
+            
+            if result == nil {
+                loadState = LoadState.Error
+                return
             }
             
-            task.resume()
+            loadState = LoadState.Success
         }
+        
+        task.resume()
+    }
         
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
                 if loadState == LoadState.Loading {
                     ProgressView()
                 } else if loadState == LoadState.Error {
@@ -74,29 +74,39 @@ struct DataView: View {
                                 image.resizable()
                                     .frame(width:100, height: 100)
                                     .cornerRadius(100)
-                                   
+                                
                             },
-                           placeholder: {
+                            placeholder: {
                                 ProgressView()
-                           }
+                            }
                         )
-                            
-                    }
                         
+                    }
+                    
                     Text(theResult.display).multilineTextAlignment(.center)
                     if let address = theResult.address {
                         Text(truncateAddress(address: address)).multilineTextAlignment(.center)
                     }
                     
-                    ForEach(Array(theResult.records.keys), id: \.self) { key in
+                    ForEach(Array(theResult.records.keys).sorted(by: {(a, b) in
+                        return (recordData[a] != nil) == (recordData[b] != nil) ?
+                        (recordData[a]?.friendlyName ?? theResult.records[a]!) < (recordData[b]?.friendlyName ?? theResult.records[b]!) :
+                        recordData[a] != nil
+                    }), id: \.self) { key in
                         RecordItem(recordKey: key, recordValue: theResult.records[key]!)
                     }
                 } else {
                     Text("Failed to load")
                 }
-            }
+            }.padding(.top, 60)
         }.onAppear {
             lookupEns()
         }
     }
 }
+
+//#Preview {
+//    let obj = SearchData()
+//    obj.ensName = "antony.sh"
+//    return DataView().environmentObject(obj)
+//}
