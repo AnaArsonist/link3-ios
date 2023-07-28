@@ -22,7 +22,7 @@ struct OnboardingView: View {
     
     @State private var showingAlert = false
     @State private var showingData = false
-    
+
     var body: some View {
         NavigationView {
             VStack(spacing: 16.0) {

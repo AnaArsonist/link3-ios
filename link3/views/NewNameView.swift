@@ -27,9 +27,9 @@ struct NewNameView: View {
         }
         .padding(.horizontal, 40)
 
-    }
+        }
 }
-//
+
 //#Preview {
 //    NewNameView()
 //}
