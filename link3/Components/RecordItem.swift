@@ -28,7 +28,7 @@ func doTheCopy(value: String) -> Void {
 
 var recordData: [String: recordInfo] = [
     "com.twitter": recordInfo(image: Image("Twitter"), friendlyName: "Twitter", bg:.cyan, action: { value in
-        tryBrowserOpen(url: URL(string: "https://twitter.com/" + value))
+        tryBrowserOpen(url: URL(string: "https://x.com/" + value))
     }),
     "com.instagram": recordInfo(image: Image("Instagram"), friendlyName: "Instagram", bg:.pink, action: { value in
         tryBrowserOpen(url: URL(string: "https://instagram.com/" + value))
