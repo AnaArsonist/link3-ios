@@ -43,6 +43,6 @@ struct TabNav: View {
     }
 }
 
-//#Preview {
-//    TabNav()
-//}
+#Preview {
+    TabNav()
+}

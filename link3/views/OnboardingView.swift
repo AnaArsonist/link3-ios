@@ -9,6 +9,10 @@ import SwiftUI
 
 class SearchData: ObservableObject {
     @Published var ensName: String = ""
+
+    init(ensName: String = "") {
+        self.ensName = ensName
+    }
     
     var isValidInput: Bool {
         return ensName.contains(".") && ensName.count >= 6 && !ensName.hasSuffix(".")
