@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .center,
+        @ViewBuilder placeholder : () -> Content ) -> some View
+    {
+        ZStack {
+            placeholder().opacity(shouldShow ? 0.6 : 0)
+            self
+        }
+    }
+}
+
+
 class SearchData: ObservableObject {
     @Published var ensName: String = ""
 
@@ -20,6 +34,7 @@ class SearchData: ObservableObject {
 }
 
 struct OnboardingView: View {
+    
     @Environment(\.colorScheme) var colorScheme
     
     @StateObject private var search: SearchData = SearchData()
@@ -32,16 +47,20 @@ struct OnboardingView: View {
             VStack(spacing: 16.0) {
                 HStack {
                     Image(systemName: "binoculars.fill").font(.system(size: 16.0))
-                        .foregroundColor(colorScheme == .dark ? .white : .black)
-                    TextField("Search for an ENS Name", text: $search.ensName)
+                        .foregroundColor(colorScheme == .dark ? Color("AccentColor") : Color("AccentColor"))
+                    TextField("", text: $search.ensName)
                         .multilineTextAlignment(.center)
+                        .placeholder(when: search.ensName.isEmpty) {
+                            Text("Search ENS Name").foregroundColor(Color("AccentColor"))
+                                .fontWeight(.medium)
+                        }
                 }
                 .autocorrectionDisabled()
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .padding(.horizontal, 10)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 20)
-                .overlay(RoundedRectangle(cornerRadius: 12).stroke(colorScheme == .dark ? Color.white : Color.black))
+                .overlay(RoundedRectangle(cornerRadius: 12).stroke(colorScheme == .dark ? Color("AccentColor") : Color("AccentColor")))
                 Button(action: {
                     if !search.isValidInput {
                         showingAlert = true
@@ -58,9 +77,10 @@ struct OnboardingView: View {
                             .padding(.all, 20)
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                             .padding(.trailing, 20)
+                            .fontWeight(.medium)
                     }
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .background(colorScheme == .dark ? .white : .black)
+                    .background(colorScheme == .dark ? Color("AccentColor") : Color("AccentColor"))
                     .cornerRadius(12)
                 }.alert("Please enter a valid ENS name", isPresented: $showingAlert){
                     Button("OK", role: .cancel) { }
@@ -74,5 +94,5 @@ struct OnboardingView: View {
 }
 
 //#Preview {
-//    OnboardingView()
+//    TabNav()
 //}

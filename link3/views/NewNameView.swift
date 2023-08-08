@@ -13,23 +13,26 @@ struct NewNameView: View {
     
     var body: some View {
         VStack{
-            Text("Your web3 username")
-                .font(.title)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            TextField("Search for a name", text: $search)
+            Text("Your Web3 Username")
+                .font(Font.custom("SatoshiVariable-Bold_Bold", size: 24))
+                .foregroundStyle(Color("AccentColor"))
+                .multilineTextAlignment(.center)
+            TextField("", text: $search)
                 .multilineTextAlignment(.center)
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .disableAutocorrection(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 20)
-                .overlay(RoundedRectangle(cornerRadius: 12).stroke(colorScheme == .dark ? Color.white : Color.black))
-                .frame(maxWidth: .infinity)
+                .fontWeight(.bold)
+                .overlay(RoundedRectangle(cornerRadius: 12).stroke(colorScheme == .dark ? Color("AccentColor") : Color(Color("AccentColor")))
+                .frame(maxWidth: .infinity))
         }
         .padding(.horizontal, 40)
 
         }
 }
 
-//#Preview {
-//    NewNameView()
-//}
+
+#Preview {
+    NewNameView()
+}

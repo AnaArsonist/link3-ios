@@ -66,6 +66,6 @@ struct EnsGallery: View {
 // TODO: Add WalletConnect
 // TODO: "Connect Wallet to View Names"
 
-#Preview {
-    TabNav()
-}
+//#Preview {
+//    TabNav()
+//}

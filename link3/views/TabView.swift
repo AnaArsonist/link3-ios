@@ -8,36 +8,43 @@
 import SwiftUI
 
 struct TabNav: View {
+
     var body: some View {
         TabView {
             EnsGallery()
                 .tabItem {
-                    Image(systemName: "list.bullet.rectangle")
-                    Text("Your ENS Names")
+                    Image("List")
+                    Text("Your Names")
+                        .font(Font.custom("SatoshiVariable-Bold_Light", size: 12))
                 }
-            
             OnboardingView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    Image("MagnifyingGlassSimple")
                     Text("Search")
+                        .font(Font.custom("SatoshiVariable-Bold_Light", size: 12))
                 }
             NewNameView()
                 .tabItem {
-                    Image(systemName: "plus.circle")
-                    Text("New Name")
+                    Image("PlusCircle")
+                        Text("New Name")
+                        .font(Font.custom("SatoshiVariable-Bold_Light", size: 12))
+
                 }
             OnboardingView()
                 .tabItem {
-                    Image(systemName: "cat")
-                    Text("Cat")
+                    Image("Marker")
+                    Text("Find Bitches")
+                        .font(Font.custom("SatoshiVariable-Bold_Light", size: 12))
+
                 }
             RecordItem(recordKey: "foo", recordValue: "bar")
                 .tabItem {
-                    Image(systemName: "gear")
+                    Image("Cog")
                     Text("Preferences")
+                        .font(Font.custom("SatoshiVariable-Bold_Bold", size: 12))
                 }
         }
-        .tabViewStyle(DefaultTabViewStyle())
+        .font(Font.custom("SatoshiVariable-Bold_Light", size: 12))
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }

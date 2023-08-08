@@ -8,7 +8,19 @@
 import SwiftUI
 
 @main
+
 struct link3App: App {
+    
+    init(){
+        for family in UIFont.familyNames {
+             print(family)
+
+             for names in UIFont.fontNames(forFamilyName: family){
+             print("== \(names)")
+             }
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             TabNav()

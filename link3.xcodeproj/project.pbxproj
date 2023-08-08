@@ -11,6 +11,9 @@
 		6507ACE32A6EAA4200BE0FF2 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507ACE22A6EAA4200BE0FF2 /* TabView.swift */; };
 		6507ACE52A6EAD5200BE0FF2 /* NewNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507ACE42A6EAD5200BE0FF2 /* NewNameView.swift */; };
 		6507ACE72A6EB0FA00BE0FF2 /* EnsGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507ACE62A6EB0FA00BE0FF2 /* EnsGallery.swift */; };
+		655230DE2A824FA2004D5815 /* Satoshi-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 655230DD2A824FA2004D5815 /* Satoshi-Variable.ttf */; };
+		655230E02A825972004D5815 /* Satoshi-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 655230DD2A824FA2004D5815 /* Satoshi-Variable.ttf */; };
+		655230E12A825973004D5815 /* Satoshi-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 655230DD2A824FA2004D5815 /* Satoshi-Variable.ttf */; };
 		659220852A6C759E00D8AEEC /* link3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659220842A6C759E00D8AEEC /* link3App.swift */; };
 		659220892A6C75A200D8AEEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659220882A6C75A200D8AEEC /* Assets.xcassets */; };
 		6592208D2A6C75A200D8AEEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6592208C2A6C75A200D8AEEC /* Preview Assets.xcassets */; };
@@ -61,6 +64,8 @@
 		6507ACE22A6EAA4200BE0FF2 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		6507ACE42A6EAD5200BE0FF2 /* NewNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNameView.swift; sourceTree = "<group>"; };
 		6507ACE62A6EB0FA00BE0FF2 /* EnsGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnsGallery.swift; sourceTree = "<group>"; };
+		655230DD2A824FA2004D5815 /* Satoshi-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Variable.ttf"; sourceTree = "<group>"; };
+		655230DF2A82587F004D5815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		659220812A6C759E00D8AEEC /* link3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = link3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659220842A6C759E00D8AEEC /* link3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = link3App.swift; sourceTree = "<group>"; };
 		659220882A6C75A200D8AEEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +132,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		655230D42A824D19004D5815 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				655230DD2A824FA2004D5815 /* Satoshi-Variable.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		659220782A6C759E00D8AEEC = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,8 @@
 		659220832A6C759E00D8AEEC /* link3 */ = {
 			isa = PBXGroup;
 			children = (
+				655230DF2A82587F004D5815 /* Info.plist */,
+				655230D42A824D19004D5815 /* Fonts */,
 				65CBD49D2A74636300454FF7 /* Models */,
 				6507ACDC2A6EA8F200BE0FF2 /* Utils */,
 				659220842A6C759E00D8AEEC /* link3App.swift */,
@@ -341,6 +356,7 @@
 			files = (
 				6592208D2A6C75A200D8AEEC /* Preview Assets.xcassets in Resources */,
 				659220892A6C75A200D8AEEC /* Assets.xcassets in Resources */,
+				655230DE2A824FA2004D5815 /* Satoshi-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655230E02A825972004D5815 /* Satoshi-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655230E12A825973004D5815 /* Satoshi-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +556,7 @@
 				DEVELOPMENT_TEAM = ZDBK8Q86L2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = link3/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -575,6 +594,7 @@
 				DEVELOPMENT_TEAM = ZDBK8Q86L2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = link3/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

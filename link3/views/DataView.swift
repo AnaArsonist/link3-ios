@@ -72,7 +72,7 @@ struct DataView: View {
                             url: URL(string: avatar),
                             content: {image in
                                 image.resizable()
-                                    .frame(width:100, height: 100)
+                                    .frame(width:150, height: 150)
                                     .cornerRadius(100)
                                 
                             },
@@ -82,12 +82,11 @@ struct DataView: View {
                         )
                         
                     }
-                    
+                    Image("MagnifyingGlassSimple_fix_attempt1")
                     Text(theResult.display).multilineTextAlignment(.center)
                     if let address = theResult.address {
                         Text(truncateAddress(address: address)).multilineTextAlignment(.center)
                     }
-                    
                     ForEach(Array(theResult.records.keys).sorted(by: {(a, b) in
                         return (recordData[a] != nil) == (recordData[b] != nil) ?
                         (recordData[a]?.friendlyName ?? theResult.records[a]!) < (recordData[b]?.friendlyName ?? theResult.records[b]!) :
