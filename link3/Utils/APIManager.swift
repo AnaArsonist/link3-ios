@@ -18,14 +18,14 @@ public protocol Endpoint {
 }
 
 public protocol APIManager {
-    func networkRequest(baseURL: String, endpoint: Endpoint, parameters: [String: Any]?, headers: [String: String]?) -> URLRequest
-    func networkRequestBuilder(url: URL, endpoint: Endpoint, headers: [String: String]?) -> URLRequest
+    func networkRequest(baseURL: String, endpoint: Endpoint, parameters: [String: Any]?, headers: [String: String]?) -> NSMutableURLRequest
+    func networkRequestBuilder(url: URL, endpoint: Endpoint, headers: [String: String]?) -> NSMutableURLRequest
     func networkTask<T: Codable>(request: URLRequest, completionHandler: @escaping (Result<T, Error>) -> Void)
 }
 
 public class APIManagerImpl: APIManager {
 
-    public func networkRequest(baseURL: String, endpoint: Endpoint, parameters: [String: Any]? = nil, headers: [String: String]? = nil) -> URLRequest {
+    public func networkRequest(baseURL: String, endpoint: Endpoint, parameters: [String: Any]? = nil, headers: [String: String]? = nil) -> NSMutableURLRequest {
         var components = URLComponents(string: baseURL + endpoint.path)!
         guard let parameters = parameters else {
             return networkRequestBuilder(url: components.url!, endpoint: endpoint, headers: headers)
@@ -37,14 +37,14 @@ public class APIManagerImpl: APIManager {
         return networkRequestBuilder(url: components.url!, endpoint: endpoint, headers: headers)
     }
 
-    public func networkRequestBuilder(url: URL, endpoint: Endpoint, headers: [String: String]? = nil) -> URLRequest {
+    public func networkRequestBuilder(url: URL, endpoint: Endpoint, headers: [String: String]? = nil) -> NSMutableURLRequest {
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
         headers?.forEach {
             request.addValue($1, forHTTPHeaderField: $0)
         }
 
-        return request as URLRequest
+        return request
     }
 
     public func networkTask<T: Codable>(request: URLRequest, completionHandler: @escaping (Result<T, Error>) -> Void) {

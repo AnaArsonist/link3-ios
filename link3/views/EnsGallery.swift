@@ -15,7 +15,7 @@ extension View {
 }
 
 struct EnsNameEntry: View {
-    @State var ens: NFT
+    @State var ens: ENSName
 
     @State private var isSheetPresented = false
 
@@ -25,7 +25,7 @@ struct EnsNameEntry: View {
         }){
             VStack{
                 AsyncImage(
-                    url: URL(string: ens.imageUrl?.replacingOccurrences(of: "image", with: "rasterize") ?? "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2F0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"),
+                    url: URL(string: ens.imageUrl),
                     content: { image in
                         image.resizable()
                             .frame(width:175, height: 175)
@@ -37,32 +37,35 @@ struct EnsNameEntry: View {
                 )
             }
         }.sheet(isPresented: $isSheetPresented) {
-            DataView().environmentObject(SearchData(ensName: ens.title))
+            DataView().environmentObject(SearchData(ensName: ens.name))
         }
     }
 }
 
 struct EnsGallery: View {
     @Environment(\.colorScheme) var colorScheme
-    @StateObject private var viewModel = NFTViewModel<NFTListModel>()
+    @StateObject private var viewModel = ENSNameViewModel()
     
     var body: some View {
         ScrollView{
             VStack {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]) {
-                    ForEach(viewModel.models?.nfts ?? []) { nft in
-                        EnsNameEntry(ens: nft)
+                    // TODO: sort
+                    ForEach(viewModel.names ?? []) { name in
+                        EnsNameEntry(ens: name)
                     }
                 }
             }.padding(.top, 10)
         }
         .onAppear{
-            viewModel.fetch(type: .nfts(key: ProcessInfo.processInfo.environment["ALCHEMY_KEY"] ?? "", address: "antony.sh", contract: "0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85"))
+            viewModel.fetch(address: "0x95E1D29b0B29257aF04D0991443df2bc2eA317D6")
         }
     }
 }
 
 // TODO: Add NameWrapper and DNS Name Support
+//  note: ^^^^ should be done, needs testing
+
 // TODO: Add WalletConnect
 // TODO: "Connect Wallet to View Names"
 
